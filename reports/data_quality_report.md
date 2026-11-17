@@ -1,5 +1,5 @@
 # RecoMart Data Quality & Profiling Report
-- **Generated At (UTC):** `2026-11-15T10:53:32.059420+00:00`
+- **Generated At (UTC):** `2026-11-17T14:37:31.067997+00:00`
 - **Validation Gate Status:** `PASSED_WITH_WARNINGS`
 - **Product Catalog Rows:** `194` | **Interaction Log Rows:** `2502`
 

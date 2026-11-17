@@ -1,0 +1,53 @@
+{
+  "flow_name": "RecoMart_EndToEnd_DMML_Pipeline",
+  "status": "SUCCEEDED",
+  "started_at_utc": "2026-11-17T14:37:20.911619+00:00",
+  "completed_at_utc": "2026-11-17T14:38:46.615726+00:00",
+  "total_duration_sec": 85.69,
+  "stages": [
+    {
+      "stage": "Ingestion (ingest_data)",
+      "module": "src.ingestion.ingest_data",
+      "status": "COMPLETED",
+      "duration_sec": 8.82
+    },
+    {
+      "stage": "Data Validation",
+      "module": "src.validation.validate_data",
+      "status": "COMPLETED",
+      "duration_sec": 1.23
+    },
+    {
+      "stage": "Data Preparation & EDA",
+      "module": "src.preparation.prepare_data",
+      "status": "COMPLETED",
+      "duration_sec": 25.17
+    },
+    {
+      "stage": "Feature Engineering & Warehouse",
+      "module": "src.features.engineer_features",
+      "status": "COMPLETED",
+      "duration_sec": 2.32
+    },
+    {
+      "stage": "Feature Store Materialization",
+      "module": "src.features.feature_store",
+      "status": "COMPLETED",
+      "duration_sec": 1.4
+    },
+    {
+      "stage": "Data Lineage Audit",
+      "module": "src.features.record_lineage",
+      "status": "COMPLETED",
+      "duration_sec": 0.23
+    },
+    {
+      "stage": "Model Training & MLflow Tracking",
+      "module": "src.models.train_evaluate",
+      "status": "COMPLETED",
+      "duration_sec": 46.2
+    }
+  ],
+  "champion_model": "Hybrid_RandomForest",
+  "model_artifact": "models\\best_recommender.joblib"
+}

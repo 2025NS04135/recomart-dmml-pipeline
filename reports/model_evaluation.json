@@ -1,0 +1,67 @@
+{
+  "champion_model": "Hybrid_RandomForest",
+  "model_artifact": "models\\best_recommender.joblib",
+  "benchmarks": [
+    {
+      "model": "CollaborativeFiltering_SVD",
+      "rmse": 1.1495,
+      "mae": 0.9614,
+      "precision_at_5": 0.3927,
+      "recall_at_5": 0.9898,
+      "ndcg_at_5": 0.7657
+    },
+    {
+      "model": "Hybrid_RandomForest",
+      "rmse": 1.1101,
+      "mae": 0.9102,
+      "precision_at_5": 0.3927,
+      "recall_at_5": 0.9898,
+      "ndcg_at_5": 0.7853
+    },
+    {
+      "model": "Hybrid_GradientBoosting",
+      "rmse": 1.1105,
+      "mae": 0.9024,
+      "precision_at_5": 0.3951,
+      "recall_at_5": 0.9959,
+      "ndcg_at_5": 0.7844
+    }
+  ],
+  "sample_recommendations_U001": [
+    {
+      "item_id": 46,
+      "title": "Plant Pot",
+      "category": "home-decoration",
+      "price": 14.99,
+      "predicted_score": 3.2692
+    },
+    {
+      "item_id": 145,
+      "title": "Cricket Wicket",
+      "category": "sports-accessories",
+      "price": 29.99,
+      "predicted_score": 3.1926
+    },
+    {
+      "item_id": 84,
+      "title": "Gigabyte Aorus Men Tshirt",
+      "category": "mens-shirts",
+      "price": 24.99,
+      "predicted_score": 3.0583
+    },
+    {
+      "item_id": 68,
+      "title": "Pan",
+      "category": "kitchen-accessories",
+      "price": 24.99,
+      "predicted_score": 3.0062
+    },
+    {
+      "item_id": 153,
+      "title": "Volleyball",
+      "category": "sports-accessories",
+      "price": 11.99,
+      "predicted_score": 2.9947
+    }
+  ]
+}
