@@ -1,0 +1,24 @@
+# Task 6: Feature Engineering & Warehouse Logic
+
+## 1. Warehouse Schema Design
+RecoMart implements a hybrid star/feature schema inside `warehouse/recomart_dw.db`:
+- **`dim_items`:** Cleaned product catalog attributes, label-encoded categories, and min-max normalized prices.
+- **`fact_interactions`:** Deduplicated clickstream and rating events with unified `interaction_score` targets (`1.0–5.0`).
+- **`user_features`:** Aggregated user engagement, purchase propensity, category diversity, and recency features.
+- **`item_features`:** Item popularity counts, mean preference score, score variance, and view-to-purchase conversion rates.
+- **`user_item_affinity`:** Cross-joined user-item preference features measuring category affinity and log-scaled co-occurrence boost.
+
+## 2. Engineered Feature Definitions
+| Table | Feature Name | Transformation Formula / Logic |
+| :--- | :--- | :--- |
+| `user_features` | `user_activity_count` | Total clickstream interactions (`COUNT(event_id)`) per user |
+| `user_features` | `user_purchase_count` | Count of `event_type == 'purchase'` events per user |
+| `user_features` | `user_avg_score` | Mean `interaction_score` across all user events |
+| `user_features` | `user_category_diversity` | Distinct product categories (`COUNT(DISTINCT category)`) explored by user |
+| `user_features` | `recency_hours` | Hours elapsed between user's most recent interaction and pipeline execution |
+| `item_features` | `item_popularity_count` | Total interactions received by the item |
+| `item_features` | `item_avg_score` | Mean `interaction_score` received by the item |
+| `item_features` | `item_score_std` | Standard deviation of item interaction scores (`0.0` if single interaction) |
+| `item_features` | `conversion_rate` | Ratio of `purchases / item_popularity_count` |
+| `user_item_affinity` | `category_affinity_score` | Share of a user's total clicks falling in the target item's category |
+| `user_item_affinity` | `co_occurrence_boost` | $\ln(1 + 10 \times \text{category\_affinity\_score})$ smoothing high-affinity pairs |

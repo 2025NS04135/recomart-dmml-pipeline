@@ -1,0 +1,31 @@
+{
+  "dataset_version_tag": "data-v1.0",
+  "recorded_at_utc": "2026-11-17T14:08:45.129524+00:00",
+  "data_sources": {
+    "product_catalog": {
+      "source_type": "REST API (DummyJSON)",
+      "raw_partition": "data\\raw\\catalog_api\\products\\year=2026\\month=11\\day=15\\hour=10\\products.json",
+      "record_count": 194
+    },
+    "user_interactions": {
+      "source_type": "Batch Clickstream CSV",
+      "raw_partition": "data\\raw\\clickstream\\interactions\\year=2026\\month=11\\day=15\\hour=10\\interactions.csv",
+      "raw_record_count": 2502,
+      "clean_record_count": 2500
+    }
+  },
+  "applied_transformations": [
+    "1_Ingestion: Hive-partitioned raw storage by source/type/YYYY/MM/DD/HH",
+    "2_Validation: Schema, null, duplicate, [1.0-5.0] rating range, and FK integrity checks",
+    "3_Preparation: Deduplication, implicit feedback mapping, LabelEncoding, MinMaxScaling",
+    "4_Feature_Engineering: User behavioral stats, item conversion rates, user-item affinity",
+    "5_Feature_Store: Materialized v1.0 offline & online feature views in registry.db"
+  ],
+  "validation_status": "PASSED_WITH_WARNINGS",
+  "dvc_tracked_artifacts": {
+    "data/raw.dvc": "e7e0b7d24b2dc7b3e2e0f4fd4540cbbc.dir",
+    "data/processed.dvc": "408f04cae9aaa683ce6de501a6f65742.dir",
+    "warehouse/recomart_dw.db.dvc": "eaad16bd04a634495d9e8539deefa3cc",
+    "feature_repo/registry.db.dvc": "13d69d7bd2a5cd71ca24ab2782a04066"
+  }
+}

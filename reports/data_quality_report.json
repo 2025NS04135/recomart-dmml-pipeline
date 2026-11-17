@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-11-15T10:53:32.059420+00:00",
+  "status": "PASSED_WITH_WARNINGS",
+  "sources": {
+    "products": "data\\raw\\catalog_api\\products\\year=2026\\month=11\\day=15\\hour=10\\products.json",
+    "interactions": "data\\raw\\clickstream\\interactions\\year=2026\\month=11\\day=15\\hour=10\\interactions.csv"
+  },
+  "row_counts": {
+    "products": 194,
+    "interactions": 2502
+  },
+  "schema_check": {
+    "missing_interaction_cols": [],
+    "missing_product_cols": []
+  },
+  "anomalies": {
+    "duplicate_event_ids": 1,
+    "duplicate_item_ids": 0,
+    "out_of_range_ratings_1_to_5": 1,
+    "non_positive_prices": 0,
+    "invalid_event_types": 0,
+    "invalid_timestamps": 0,
+    "orphan_item_references": 0,
+    "null_counts_interactions": {
+      "event_id": 0,
+      "user_id": 0,
+      "item_id": 0,
+      "event_type": 0,
+      "rating": 1899,
+      "timestamp": 0
+    },
+    "null_counts_products": {
+      "item_id": 0,
+      "title": 0,
+      "price": 0,
+      "description": 0,
+      "category": 0,
+      "api_rating_rate": 0,
+      "api_rating_count": 0,
+      "ingested_at": 0
+    }
+  }
+}

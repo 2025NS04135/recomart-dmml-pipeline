@@ -1,0 +1,5 @@
+outs:
+- md5: eaad16bd04a634495d9e8539deefa3cc
+  size: 770048
+  hash: md5
+  path: recomart_dw.db

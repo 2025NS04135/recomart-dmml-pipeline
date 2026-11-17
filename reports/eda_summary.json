@@ -1,0 +1,17 @@
+{
+  "raw_interaction_rows": 2502,
+  "clean_interaction_rows": 2500,
+  "rows_removed": 2,
+  "clean_product_rows": 194,
+  "unique_users": 100,
+  "unique_interacted_items": 194,
+  "observed_user_item_pairs": 2174,
+  "matrix_sparsity": 0.8879,
+  "mean_interaction_score": 2.3592,
+  "event_breakdown": {
+    "view": 1380,
+    "add_to_cart": 519,
+    "purchase": 352,
+    "rate": 249
+  }
+}
